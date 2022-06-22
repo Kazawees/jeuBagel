@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div style="margin-top:80px;">
+
+</div>
+    <div class="container text-center mt-5">
+        <h3>Ce jeu est réservé aux personnes majeures,<br> confirmer votre âge en appuyant sur commencer.</h3>
+        <div class="row">
+            <div class="col-12 mt-4">
+                <a href="{{ path('player_create') }}" ><button class="original text-center">Commencer le jeu !</button></a>
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

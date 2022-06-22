@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ChooseController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center mt-5">
+            <a href="{{  path('app_original', {id:0}) }}">
+                <button type="button" class="text-center original" style="width:70%"><h2>ORIGINAL</h2></button>
+            </a>
+            
+           
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center ">
+          
+            
+            <a>
+                <button type="button" class="text-center mt-5 questio" style="width:70%" ><h2>TURBOCUITE</h2></button>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center mt-5">
+           
+            <a href="{{  path('app_question_index') }}" class="text-center "><button type="button" class="text-center turbo"><h3>Créer vos propres questions et retrouver les dans ORIGINAL</h3></button></a>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center mt-5">
+            <a href="{{ path('player_create') }}" class="text-center mt-5" ><button class="learn-more"><h3>Ajouter joueurs</h3></button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}

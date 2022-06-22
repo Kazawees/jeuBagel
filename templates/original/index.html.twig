@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OriginalController!{% endblock %}
+
+{% block body %}
+<div class="container mt-3">
+    <a href="{{ path('app_original', {'id': numero_question}) }}">
+        <div class="card mx-auto" id="test">
+            <div class="card-body text-center m-5 " >
+
+
+               {% if numero_question <= 10 %}
+                <h3 class="text-decoration-none la" style="color:black;">
+                    {{ (gamer.name) }}
+                
+               {% endif %}
+       
+               
+               {{(question)}}
+               </h3>
+            </div>
+        </div>
+    </a>
+</div>
+<div class="container text-center mt-4">
+    <img src="{{ asset('images/test.gif') }}" alt="" style="width:20%;">
+</div>
+{% endblock %}

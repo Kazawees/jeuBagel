@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Question{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2>Nouvelle question</h2>
+    <br>
+     <div class="mt-2 text-center">
+    {{ include('question/_form.html.twig') }}
+    </div>
+    <div class="mt-4 text-center">
+            <button type="button"class="turbo"><a class="text-decoration-none" style="color:black;" href="{{ path('app_question_index') }}">Retourner à la liste</a></button>
+        </div>
+</div>
+{% endblock %}

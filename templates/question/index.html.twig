@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Questions{% endblock %}
+
+{% block body %}
+<div class="mr-auto">
+    <a href="{{ path('app_choose') }}" class="text-decoration-none "><button class="btn btn-outline-dark m-2 btndark">Retour au jeu !</button></a>
+</div>
+
+    <h2 class="text-center">Liste des questions</h2>
+<div class="container" >
+    <table class="table-hover table table-bordered text-center" style="border-radius: 25px;" >
+        <thead>
+            <tr >
+                <th>Id</th>
+                <th>Question</th>
+                <th>Difficulté</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.id }}</td>
+                <td>{{ question.Question }}</td>
+                <td>{{ question.difficulty }}</td>
+                <td>
+                    <a href="{{ path('app_question_show', {'id': question.id}) }}" class="m-2">voir</a>
+                    <a href="{{ path('app_question_edit', {'id': question.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">oups</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center mt-3">
+    <a href="{{ path('app_question_new') }}"><button type="button" class="text-center mx-auto turbo">Ajouter une nouvelle question</button></a>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+     <div class="w-50 text-center mx-auto">
+     
+                
+                       
+                {% for gamer in gamers %}
+        
+            <div class="text-center mt-3 p-3" style="border-color: black;border-radius: 15px; border: solid 2px; ">
+                {{ gamer.name }} <a href="{{ path('player_delete', {'id': gamer.id}) }}"class="text-decoration-none" style="color:red;position:relative;display:inline-block;float:right;">X</a>
+            </div>
+            
+                        
+                    
+             
+                    
+                 
+                        
+                             
+                          
+            {% endfor %}
+  
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ form_start(form) }}
+                {{ form_widget(form._token) }}
+                {{ form_errors(form) }}
+                {{ form_row(form.name, {'class': 'hidden-row'}) }}
+               <div class="text-center">
+                <button type="button" class="turbo btn-new p-2 mt-2 text-center" data-collection="#gamers">Nouveau Joueurs</button>
+                <div>
+                <div id="gamers" data-prototype="{{ include('player/_gamer.html.twig', {form: form.gamers.vars.prototype})|e('html_attr') }}" data-index="{{ form.gamers|length > 0 ? form.gamers|last.vars.name + 1 : 0 }}">
+                    {% for gamer in form.gamers %}
+                        {{ include("player/_gamer.html.twig")}}
+                    {% endfor %}
+                </div>
+                {{ form_errors(form.gamers) }}
+                <div class="text-center fixed-bottom mb-5">
+                
+                    <button class="original">
+
+                        C'est bon, on joue !?
+                        
+                    </button>
+                
+                
+              </div>
+                {{ form_end(form, {render_rest: false}) }}
+            </div>
+        </div>
+    </div>
+<style hre></style>
+{% endblock %}
